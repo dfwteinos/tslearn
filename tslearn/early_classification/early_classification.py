@@ -7,10 +7,17 @@ from scipy.sparse import coo_matrix
 from sklearn.utils import check_array
 from sklearn.utils.validation import check_is_fitted
 
-from ..utils import to_time_series_dataset, check_dims
-from ..neighbors import KNeighborsTimeSeriesClassifier
-from ..clustering import TimeSeriesKMeans
-from ..bases import TimeSeriesBaseEstimator
+# changes below
+
+from utils import to_time_series_dataset, check_dims
+from neighbors import KNeighborsTimeSeriesClassifier
+from clustering import TimeSeriesKMeans
+from bases import TimeSeriesBaseEstimator
+
+# from ..utils import to_time_series_dataset, check_dims
+# from ..neighbors import KNeighborsTimeSeriesClassifier
+# from ..clustering import TimeSeriesKMeans
+# from ..bases import TimeSeriesBaseEstimator
 
 
 class NonMyopicEarlyClassifier(ClassifierMixin, TimeSeriesBaseEstimator):
@@ -578,3 +585,8 @@ class NonMyopicEarlyClassifier(ClassifierMixin, TimeSeriesBaseEstimator):
         # too small to pass here (only 1 item in one of the clusters, hence no
         # stratified split possible)
         return {"no_validation": True}
+
+    def print_test(self):
+        #Test function
+        print("ALLOKAY")
+        return
